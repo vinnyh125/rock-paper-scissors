@@ -60,3 +60,5 @@ while gameCont == '1':
         print('You won!')  
 
     gameCont = input("Press '1' to continue; press '2' to quit: ")
+    while gameCont not in gameStatus:
+        gameCont = input("That's not one of the options. Please try again: ")
