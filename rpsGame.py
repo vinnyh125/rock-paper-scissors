@@ -3,6 +3,12 @@ import random
 options = ['rock', 'paper', 'scissors']
 gameStatus = ['1','2']
 
+def win():
+    print('You won!')
+    
+def lose():
+    print('You lost.')
+
 print('Welcome to rock paper scissors!')
 
 gameCont = input("Press '1' to start; press '2' to quit: ")
@@ -34,30 +40,21 @@ while gameCont == '1':
             print("That's an invalid input; please try again")
             userChoice = input("Please type in your new choice: ")
 
+    print('You chose: ' + userChoice)
+    print('Computer chose: ' + compChoice)
+
     if userChoice == 'rock' and compChoice == 'paper':
-        print('You chose: ' + userChoice)
-        print('Computer chose: ' + compChoice)
-        print('You lose.')
+        lose()
     elif userChoice == 'rock' and compChoice == 'scissors':
-        print('You chose: ' + userChoice)
-        print('Computer chose: ' + compChoice)
-        print('You won!')
+        win()
     if userChoice == 'paper' and compChoice == 'rock':
-        print('You chose: ' + userChoice)
-        print('Computer chose: ' + compChoice)
-        print('You won!')
+        win()
     elif userChoice == 'paper' and compChoice == 'scissors':
-        print('You chose: ' + userChoice)
-        print('Computer chose: ' + compChoice)
-        print('You lose.')
+        lose()
     if userChoice == 'scissors' and compChoice == 'rock':
-        print('You chose: ' + userChoice)
-        print('Computer chose: ' + compChoice)
-        print('You lose.')
+        lose()
     elif userChoice == 'scissors' and compChoice == 'paper':
-        print('You chose: ' + userChoice)
-        print('Computer chose: ' + compChoice)
-        print('You won!')  
+        win()
 
     gameCont = input("Press '1' to continue; press '2' to quit: ")
     while gameCont not in gameStatus:
